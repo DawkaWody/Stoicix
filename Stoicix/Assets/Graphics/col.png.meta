@@ -156,11 +156,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 6
+        y: 69
         width: 32
-        height: 96
+        height: 33
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -169,6 +169,50 @@ TextureImporter:
       bones: []
       spriteID: a8ea38bf4b1ab9790800000000000000
       internalID: -7522240953906385270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: col_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 37
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efe59634f81358b4da9b79c86c0b09c1
+      internalID: 1286965214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: col_2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 5
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91d1d7bb87f667b4f95d1d1f9ceed108
+      internalID: 719200519
       vertices: []
       indices: 
       edges: []
@@ -185,9 +229,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":16.0,"y":6.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       col_0: -7522240953906385270
+      col_1: 1286965214
+      col_2: 719200519
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
