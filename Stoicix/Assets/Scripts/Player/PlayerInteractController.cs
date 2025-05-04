@@ -3,6 +3,7 @@ using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerInputHandler))]
+[RequireComponent(typeof(PlayerMovementController))]
 public class PlayerInteractController : MonoBehaviour
 {
     [SerializeField] private Transform _interactPoint;
@@ -10,11 +11,13 @@ public class PlayerInteractController : MonoBehaviour
     [SerializeField] private LayerMask _interactableLayers;
 
     private PlayerInputHandler _inputHandler;
+    private PlayerMovementController _movementController;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _inputHandler = GetComponent<PlayerInputHandler>();
+        _movementController = GetComponent<PlayerMovementController>();
     }
 
     // Update is called once per frame
@@ -27,7 +30,8 @@ public class PlayerInteractController : MonoBehaviour
             .ToList();
         IInteractable interactable = interactables.FirstOrDefault(i =>
             i.InteractPriority == interactables.Max(interactable => interactable.InteractPriority));
-        interactable?.Interact();
+        _movementController.Freeze();
+        interactable?.Interact(_movementController.Unfreeze);
     }
 
     private void OnDrawGizmosSelected()

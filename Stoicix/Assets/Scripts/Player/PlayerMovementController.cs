@@ -8,7 +8,7 @@ public class PlayerMovementController : MonoBehaviour
     [SerializeField] private float _speed = 5f;
 
     private Vector2 _moveInput;
-    private bool _facingRight;
+    private bool _takeInput;
 
     private Rigidbody2D _rigidbody;
     private PlayerInputHandler _inputHandler;
@@ -20,18 +20,27 @@ public class PlayerMovementController : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         _inputHandler = GetComponent<PlayerInputHandler>();
         _animationController = GetComponent<PlayerAnimationController>();
-
-        _facingRight = true;
+        _takeInput = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        _moveInput = _inputHandler.MoveInput.normalized;
+        _moveInput = _takeInput ? _inputHandler.MoveInput.normalized : Vector2.zero;
         _rigidbody.linearVelocity = new Vector2(_moveInput.x, _moveInput.y) * _speed;
 
         _animationController.AnimateMovement(_moveInput);
         TurnCheck();
+    }
+
+    public void Freeze()
+    {
+        _takeInput = false;
+    }
+
+    public void Unfreeze()
+    {
+        _takeInput = true;
     }
 
     private void TurnCheck()
@@ -44,14 +53,11 @@ public class PlayerMovementController : MonoBehaviour
             case < 0:
                 Turn(false);
                 break;
-            default:
-                break;
         }
     }
 
     private void Turn(bool side) // true = right, false = left
     {
         transform.localScale = side ? new Vector3(1, 1, 1) : new Vector3(-1, 1, 1);
-        _facingRight = side;
     }
 }

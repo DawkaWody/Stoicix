@@ -11,7 +11,7 @@ public class QuoteBook : MonoBehaviour, IInteractable
 
     private bool _isOpened;
 
-    public void Interact()
+    public void Interact(IInteractable.EmptyCallback OnInteractionEnd)
     {
         if (_isOpened)
         {
@@ -23,6 +23,7 @@ public class QuoteBook : MonoBehaviour, IInteractable
             {
                 _bookMonolog.Close();
                 _isOpened = false;
+                OnInteractionEnd?.Invoke();
             }
         }
         else StartCoroutine(OpenCo());

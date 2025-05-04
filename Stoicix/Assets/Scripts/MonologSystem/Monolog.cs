@@ -19,20 +19,27 @@ public class Monolog : MonoBehaviour
         _textBox = _textGo.GetComponent<TMP_Text>();
         _typeWriterEffect = _textGo.GetComponent<TypeWriterEffect>();
         _bubble.SetActive(false);
+        _currentTextIndex = 0;
     }
 
-    public void Next()
+    public bool Next()
     {
+        if (_typeWriterEffect.IsRunning())
+        {
+            _typeWriterEffect.Skip();
+            return true;
+        }
         _typeWriterEffect.Clear();
         if (_currentTextIndex >= _texts.Length)
         {
-            _bubble.SetActive(false);
-            return;
+            Close();
+            return false;
         }
         _bubble.SetActive(true);
         _textBox.text = _texts[_currentTextIndex];
         _typeWriterEffect.Trigger();
         _currentTextIndex++;
+        return true;
     }
 
     public void OneShot(string text)

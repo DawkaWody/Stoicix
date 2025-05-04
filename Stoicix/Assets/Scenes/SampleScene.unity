@@ -10598,10 +10598,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _quotes:
   - Erm, \nwhat the sigma
-  - '"Jezu \nale to brzydkie" - Reginiusz\n z Lewkotu'
-  - '"To masz\n problem" - Zmysiokrates\n ze Smrodopolis'
-  - "\"Ci\u0119\u017Cki to\\n jest Jakub Ci\u0119\u017Cki\" - Zupoma\u0142pus\\n
-    z Ekwadoru"
+  - '"Jezu \nale to brzydkie" - Reginiusz \nz Lewkotu'
+  - '"To masz \nproblem" - Zmysiokrates \nze Smrodopolis'
+  - "\"Ci\u0119\u017Cki to \\njest Jakub Ci\u0119\u017Cki\" - Zupoma\u0142pus \\nz
+    Ekwadoru"
   _bookMonolog: {fileID: 1183818408}
   _bookAnimator: {fileID: 1318676060}
 --- !u!1 &831225293
@@ -12560,11 +12560,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7413872934426164306, guid: 978110c77d1e3d84886e35e153b7fb00, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.44605
+      value: 1.03
       objectReference: {fileID: 0}
     - target: {fileID: 7413872934426164306, guid: 978110c77d1e3d84886e35e153b7fb00, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.82348
+      value: 2.95
       objectReference: {fileID: 0}
     - target: {fileID: 7413872934426164306, guid: 978110c77d1e3d84886e35e153b7fb00, type: 3}
       propertyPath: m_LocalPosition.z

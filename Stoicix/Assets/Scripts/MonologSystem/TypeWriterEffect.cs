@@ -25,12 +25,6 @@ public class TypeWriterEffect : MonoBehaviour
 
     public void Trigger()
     {
-        if (_isRunning)
-        {
-            Debug.Log("Skibeydy skip");
-            Skip();
-            return;
-        }
         _text.ForceMeshUpdate();
         _text.maxVisibleCharacters = 0;
         _typeWriterCo = StartCoroutine(TypeWriterCo());
