@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 0050215cbad77bc43abfa4688dfd5860
+guid: 568a7c039ad3505489fa55ea22b4dac8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8762516984795537974
-    second: filozof01_idle_0
-  - first:
-      213: -4528830918334880772
-    second: filozof01_idle_1
+      213: -1185336066901334192
+    second: bricks_01_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -129,45 +126,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: filozof01_idle_0
+      name: bricks_01_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 29
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 632a01995c6ba9970800000000000000
-      internalID: 8762516984795537974
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: filozof01_idle_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 29
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cf3e7d8464c5621c0800000000000000
-      internalID: -4528830918334880772
+      spriteID: 05723e89027dc8fe0800000000000000
+      internalID: -1185336066901334192
       vertices: []
       indices: 
       edges: []
@@ -176,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1c7c778aa759b714fb39e20e889978cf
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -186,8 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      filozof01_idle_0: 8762516984795537974
-      filozof01_idle_1: -4528830918334880772
+      bricks_01_0: -1185336066901334192
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
