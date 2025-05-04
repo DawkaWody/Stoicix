@@ -3,7 +3,7 @@ using UnityEngine;
 public class ColumnDeco : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer[] _sprites;
-    [SerializeField] private float _yOffset;
+    [SerializeField] private float _yOffset = 0.5f;
 
     private Vector2 _checkPosition;
     private Transform _player;
@@ -13,7 +13,7 @@ public class ColumnDeco : MonoBehaviour
     void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player").transform;
-        _checkPosition = _sprites[2].transform.position;
+        _checkPosition = _sprites[^1].transform.position;
         _playerSortingOrder = _player.GetComponent<SpriteRenderer>().sortingOrder;
     }
 
