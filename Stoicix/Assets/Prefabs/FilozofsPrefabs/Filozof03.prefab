@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 731914949400080141}
   - component: {fileID: 536525459766412476}
   - component: {fileID: 7706369635634212430}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Filozof03
   m_TagString: Untagged
   m_Icon: {fileID: 0}

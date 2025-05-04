@@ -303,7 +303,7 @@ GameObject:
   m_Component:
   - component: {fileID: 68024277}
   - component: {fileID: 68024276}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -849,7 +849,7 @@ GameObject:
   - component: {fileID: 171394026}
   - component: {fileID: 171394028}
   - component: {fileID: 171394027}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3572,7 +3572,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 185390262}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Buildings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3958,7 +3958,7 @@ GameObject:
   - component: {fileID: 346450515}
   - component: {fileID: 346450517}
   - component: {fileID: 346450518}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8901,7 +8901,7 @@ GameObject:
   m_Component:
   - component: {fileID: 557450505}
   - component: {fileID: 557450506}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LPC_Ancient_Greece_Architecture_160
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8996,6 +8996,7 @@ GameObject:
   - component: {fileID: 565701230}
   - component: {fileID: 565701235}
   - component: {fileID: 565701236}
+  - component: {fileID: 565701237}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -9092,7 +9093,8 @@ Transform:
   m_LocalPosition: {x: 2.67, y: 0.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1871589107}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &565701230
@@ -9274,6 +9276,23 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.7552986, y: 0.16248661}
   m_EdgeRadius: 0
+--- !u!114 &565701237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565701226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a39e7003517d304b8a5d013eabef54d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactPoint: {fileID: 1871589107}
+  _interactRadius: 1.17
+  _interactableLayers:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &582555436
 GameObject:
   m_ObjectHideFlags: 0
@@ -9398,7 +9417,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 0000000085d3b9c69571ac2f
+  m_ApplyToSortingLayers: 0000000085d3b9c69571ac2f91f1a198
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -9542,7 +9561,7 @@ GameObject:
   m_Component:
   - component: {fileID: 646031357}
   - component: {fileID: 646031358}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LPC_Ancient_Greece_Architecture_160
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9630,7 +9649,7 @@ GameObject:
   - component: {fileID: 671595548}
   - component: {fileID: 671595550}
   - component: {fileID: 671595549}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: OuterDeco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10350,7 +10369,7 @@ GameObject:
   m_Component:
   - component: {fileID: 750940679}
   - component: {fileID: 750940680}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LPC_Ancient_Greece_Architecture_120
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10437,8 +10456,11 @@ GameObject:
   m_Component:
   - component: {fileID: 757637480}
   - component: {fileID: 757637481}
-  m_Layer: 0
-  m_Name: Column
+  - component: {fileID: 757637483}
+  - component: {fileID: 757637482}
+  - component: {fileID: 757637484}
+  m_Layer: 6
+  m_Name: BookColumn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10460,6 +10482,7 @@ Transform:
   - {fileID: 1318676059}
   - {fileID: 1084614776}
   - {fileID: 839297117}
+  - {fileID: 1183818407}
   m_Father: {fileID: 1172442029}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &757637481
@@ -10478,6 +10501,109 @@ MonoBehaviour:
   - {fileID: 839297118}
   - {fileID: 1084614777}
   _yOffset: 0.5
+--- !u!70 &757637482
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757637479}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.01787597, y: 1.12654}
+  m_Size: {x: 1.205069, y: 1.99265}
+  m_Direction: 0
+--- !u!61 &757637483
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757637479}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: -0.17100587}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 0.65798825}
+  m_EdgeRadius: 0
+--- !u!114 &757637484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757637479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180eaced48953e0429dfe3c508a3ed27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _quotes:
+  - Erm, \nwhat the sigma
+  - '"Jezu \nale to brzydkie" - Reginiusz\n z Lewkotu'
+  - '"To masz\n problem" - Zmysiokrates\n ze Smrodopolis'
+  - "\"Ci\u0119\u017Cki to\\n jest Jakub Ci\u0119\u017Cki\" - Zupoma\u0142pus\\n
+    z Ekwadoru"
+  _bookMonolog: {fileID: 1183818408}
+  _bookAnimator: {fileID: 1318676060}
 --- !u!1 &831225293
 GameObject:
   m_ObjectHideFlags: 0
@@ -10488,7 +10614,7 @@ GameObject:
   m_Component:
   - component: {fileID: 831225294}
   - component: {fileID: 831225295}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LPC_Ancient_Greece_Architecture_140
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10575,7 +10701,7 @@ GameObject:
   m_Component:
   - component: {fileID: 839297117}
   - component: {fileID: 839297118}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: col_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10662,7 +10788,7 @@ GameObject:
   m_Component:
   - component: {fileID: 979189450}
   - component: {fileID: 979189451}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LPC_Ancient_Greece_Architecture_140
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10790,7 +10916,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1008669769}
   - component: {fileID: 1008669770}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Col1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10928,7 +11054,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1081197813}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Columns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10964,7 +11090,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1084614776}
   - component: {fileID: 1084614777}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: col_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11052,7 +11178,7 @@ GameObject:
   - component: {fileID: 1087115005}
   - component: {fileID: 1087115007}
   - component: {fileID: 1087115006}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Roofs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12343,7 +12469,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1182387468}
   - component: {fileID: 1182387469}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LPC_Ancient_Greece_Architecture_120
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12420,6 +12546,79 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1183818406
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 757637480}
+    m_Modifications:
+    - target: {fileID: 4074501502606639601, guid: 978110c77d1e3d84886e35e153b7fb00, type: 3}
+      propertyPath: m_Name
+      value: BookMonolog
+      objectReference: {fileID: 0}
+    - target: {fileID: 7413872934426164306, guid: 978110c77d1e3d84886e35e153b7fb00, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.44605
+      objectReference: {fileID: 0}
+    - target: {fileID: 7413872934426164306, guid: 978110c77d1e3d84886e35e153b7fb00, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.82348
+      objectReference: {fileID: 0}
+    - target: {fileID: 7413872934426164306, guid: 978110c77d1e3d84886e35e153b7fb00, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7413872934426164306, guid: 978110c77d1e3d84886e35e153b7fb00, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7413872934426164306, guid: 978110c77d1e3d84886e35e153b7fb00, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7413872934426164306, guid: 978110c77d1e3d84886e35e153b7fb00, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7413872934426164306, guid: 978110c77d1e3d84886e35e153b7fb00, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7413872934426164306, guid: 978110c77d1e3d84886e35e153b7fb00, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7413872934426164306, guid: 978110c77d1e3d84886e35e153b7fb00, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7413872934426164306, guid: 978110c77d1e3d84886e35e153b7fb00, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 978110c77d1e3d84886e35e153b7fb00, type: 3}
+--- !u!4 &1183818407 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7413872934426164306, guid: 978110c77d1e3d84886e35e153b7fb00, type: 3}
+  m_PrefabInstance: {fileID: 1183818406}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1183818408 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4761055187266898750, guid: 978110c77d1e3d84886e35e153b7fb00, type: 3}
+  m_PrefabInstance: {fileID: 1183818406}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d586512a36093f7418a97ae29e3e0c2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1193746924
 GameObject:
   m_ObjectHideFlags: 0
@@ -12430,7 +12629,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1193746925}
   - component: {fileID: 1193746926}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LPC_Ancient_Greece_Architecture_160
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12517,7 +12716,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1276184117}
   - component: {fileID: 1276184118}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LPC_Ancient_Greece_Architecture_120
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12605,7 +12804,7 @@ GameObject:
   - component: {fileID: 1318676059}
   - component: {fileID: 1318676061}
   - component: {fileID: 1318676060}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Book
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12905,7 +13104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1466104414}
   - component: {fileID: 1466104415}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Col1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13131,7 +13330,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1558229083}
   - component: {fileID: 1558229084}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LPC_Ancient_Greece_Architecture_120
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13305,7 +13504,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1644504674}
   - component: {fileID: 1644504675}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LPC_Ancient_Greece_Architecture_160
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13827,7 +14026,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1815270866}
   - component: {fileID: 1815270867}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Col1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13880,7 +14079,7 @@ GameObject:
   - component: {fileID: 1858339779}
   - component: {fileID: 1858339781}
   - component: {fileID: 1858339780}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Island
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23860,6 +24059,37 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1871589106
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1871589107}
+  m_Layer: 0
+  m_Name: InteractPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1871589107
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871589106}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.452, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 565701229}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1899286258
 GameObject:
   m_ObjectHideFlags: 0
@@ -24218,7 +24448,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1970892436}
   - component: {fileID: 1970892437}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LPC_Ancient_Greece_Architecture_140
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24305,7 +24535,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1988485974}
   - component: {fileID: 1988485975}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Col1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24357,7 +24587,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2031403630}
   - component: {fileID: 2031403631}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LPC_Ancient_Greece_Architecture_140
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24445,7 +24675,7 @@ GameObject:
   - component: {fileID: 2049346154}
   - component: {fileID: 2049346156}
   - component: {fileID: 2049346155}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bricks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
