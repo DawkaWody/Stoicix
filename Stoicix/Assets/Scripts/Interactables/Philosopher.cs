@@ -9,6 +9,8 @@ public class Philosopher : MonoBehaviour, IInteractable
 
     public void Interact(IInteractable.EmptyCallback OnInteractionEnd)
     {
-        if (!_monolog.Next()) OnInteractionEnd?.Invoke();
+        if (_monolog.Next()) return;
+        OnInteractionEnd?.Invoke();
+        GameManager.Instance.LoadMinigame(_minigameScene);
     }
 }

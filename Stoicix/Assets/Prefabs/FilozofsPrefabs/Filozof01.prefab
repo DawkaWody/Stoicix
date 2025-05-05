@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _monolog: {fileID: 1239837483623948698}
-  _minigameScene: 0
+  _minigameScene: 1
 --- !u!70 &8032290643562920356
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
