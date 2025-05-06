@@ -46,8 +46,8 @@ public class ZenonMinigame : MonoBehaviour
 
             currentMousePosition += direction * Time.deltaTime * dragStrength + new Vector2(xDrag, yDrag);
 
-            // currentMousePosition.x = Mathf.Clamp(currentMousePosition.x, 0, Screen.width);
-            // currentMousePosition.y = Mathf.Clamp(currentMousePosition.y, 0, Screen.height);
+            currentMousePosition.x = Mathf.Clamp(currentMousePosition.x, 0, Screen.width);
+            currentMousePosition.y = Mathf.Clamp(currentMousePosition.y, 0, Screen.height);
 
             // setting position
             Cursor.lockState = CursorLockMode.Confined;
