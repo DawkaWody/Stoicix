@@ -42,7 +42,7 @@ public class SortingOrderHandling : MonoBehaviour
 
         float baseY = transform.position.y + referenceYOffset;
         int sortOrder = Mathf.RoundToInt(-baseY * sortingOffset);
-        //sortOrder /= sortingOffset;
+        sortOrder /= sortingOffset;
 
         foreach (var sprite in _sprites) sprite.sortingOrder = sortOrder;
         sortord = sortOrder;

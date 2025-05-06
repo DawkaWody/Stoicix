@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class TilemapFade : MonoBehaviour
 {
     public Tilemap targetTilemap;
     public float transparentAlpha = 0.5f;

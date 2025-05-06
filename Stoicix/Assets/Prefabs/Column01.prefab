@@ -141,8 +141,8 @@ MonoBehaviour:
   - {fileID: 4030951928579289082}
   - {fileID: 841273175367286523}
   - {fileID: 145484837271642392}
-  sortingOffset: 1
-  referenceYOffset: 0
+  sortingOffset: 1000
+  referenceYOffset: -0.5
   sortord: 0
 --- !u!70 &2446184949244277770
 CapsuleCollider2D:
