@@ -22769,14 +22769,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Column01
       objectReference: {fileID: 0}
-    - target: {fileID: 2163788262591781423, guid: 28750dc877d3c424b8a2c0616862a6dc, type: 3}
-      propertyPath: sortingOffset
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 2163788262591781423, guid: 28750dc877d3c424b8a2c0616862a6dc, type: 3}
-      propertyPath: referenceYOffset
-      value: -0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 2898495236202562354, guid: 28750dc877d3c424b8a2c0616862a6dc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.5
