@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: f872a131fcc859a93a846150a646f7c8
+guid: 66bcda87b7ff60745951d42dc110190e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6576021544249344758
-    second: Stormy_Mountains_Mountain_2_Light_0
+      213: 7772053563467876060
+    second: fountain_0
+  - first:
+      213: 6017166387113642881
+    second: fountain_1
+  - first:
+      213: -5071872562740070876
+    second: fountain_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,13 +132,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Stormy_Mountains_Mountain_2_Light_0
+      name: fountain_0
       rect:
         serializedVersion: 2
-        x: 1118
-        y: 0
-        width: 668
-        height: 451
+        x: 55
+        y: 63
+        width: 82
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +147,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a0db3bb2f374db4a0800000000000000
-      internalID: -6576021544249344758
+      spriteID: cd6cfc1b981ebdb60800000000000000
+      internalID: 7772053563467876060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fountain_1
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 63
+        width: 82
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18b4452e2f4418350800000000000000
+      internalID: 6017166387113642881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fountain_2
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 63
+        width: 82
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 426f3dfa6c61d99b0800000000000000
+      internalID: -5071872562740070876
       vertices: []
       indices: 
       edges: []
@@ -161,7 +211,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Stormy_Mountains_Mountain_2_Light_0: -6576021544249344758
+      fountain_0: 7772053563467876060
+      fountain_1: 6017166387113642881
+      fountain_2: -5071872562740070876
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

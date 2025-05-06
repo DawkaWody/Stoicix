@@ -8997,6 +8997,7 @@ GameObject:
   - component: {fileID: 565701235}
   - component: {fileID: 565701236}
   - component: {fileID: 565701237}
+  - component: {fileID: 565701238}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -9293,6 +9294,23 @@ MonoBehaviour:
   _interactableLayers:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &565701238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565701226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 477afb3afdf0ae743be07195bbbea893, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sprites:
+  - {fileID: 565701228}
+  sortingOffset: 1000
+  referenceYOffset: 0
+  sortord: 0
 --- !u!1 &582555436
 GameObject:
   m_ObjectHideFlags: 0
@@ -10500,7 +10518,9 @@ MonoBehaviour:
   _sprites:
   - {fileID: 839297118}
   - {fileID: 1084614777}
-  _yOffset: 0.5
+  sortingOffset: 1000
+  referenceYOffset: 0
+  sortord: 0
 --- !u!70 &757637482
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -11001,7 +11021,9 @@ MonoBehaviour:
   - {fileID: 1182387469}
   - {fileID: 2031403631}
   - {fileID: 1193746926}
-  _yOffset: 0.5
+  sortingOffset: 1000
+  referenceYOffset: 0
+  sortord: 0
 --- !u!1 &1045636860
 GameObject:
   m_ObjectHideFlags: 0
@@ -13189,7 +13211,9 @@ MonoBehaviour:
   - {fileID: 1558229084}
   - {fileID: 979189451}
   - {fileID: 557450506}
-  _yOffset: 0.5
+  sortingOffset: 1000
+  referenceYOffset: 0
+  sortord: 0
 --- !u!1 &1492703736
 GameObject:
   m_ObjectHideFlags: 0
@@ -14111,7 +14135,9 @@ MonoBehaviour:
   - {fileID: 750940680}
   - {fileID: 1970892437}
   - {fileID: 646031358}
-  _yOffset: 0.5
+  sortingOffset: 1000
+  referenceYOffset: 0
+  sortord: 0
 --- !u!1 &1858339778
 GameObject:
   m_ObjectHideFlags: 0
@@ -24620,7 +24646,9 @@ MonoBehaviour:
   - {fileID: 1276184118}
   - {fileID: 831225295}
   - {fileID: 1644504675}
-  _yOffset: 0.5
+  sortingOffset: 1000
+  referenceYOffset: 0
+  sortord: 0
 --- !u!1 &2031403629
 GameObject:
   m_ObjectHideFlags: 0
