@@ -3,66 +3,94 @@ using UnityEngine.InputSystem;
 using TMPro;
 using UnityEditor;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
-public class ZenonMinigame : MonoBehaviour
+public class cursorMover : MonoBehaviour
 {
-    public float dragStrength = 10f;  // Siła, z jaką "burza" odciąga kursor
-    public float maxTime = 30f;  // Czas trwania minigry w sekundach
-    public float distance = 100f; 
-    private float timer;
-    private Vector2 screenCenter;
+    [SerializeField] private float dragStrength = 10f;  // Siła, z jaką "burza" odciąga kursor
+    [SerializeField] private float timeToWin = 30f;  // Czas trwania minigry w sekundach
+    [SerializeField] private float timeToDie = 5f;
+    [SerializeField] private float distance = 100f;
+
+    [SerializeField] private TextMeshProUGUI textMeshPro;
+    [SerializeField] private RectTransform cursor;
+    [SerializeField] private RectTransform center;
+
+    private float deathTimer;
+    private float winTimer;
     private bool isGameActive;
-    private Vector2 currentMousePosition;
-    public TextMeshProUGUI textMeshPro;
+    private Vector2 screenCenter;
+    private Vector2 simulatedPosition;
 
     void Start()
     {
         screenCenter = new Vector2(Screen.width / 2, Screen.height / 2);
-        timer = maxTime;
-        isGameActive = true;
+        simulatedPosition = screenCenter;
+
+        center.position = screenCenter;
+        center.sizeDelta = new Vector2(distance * 2f, distance * 2f);
+
+        deathTimer = timeToDie;
+        winTimer = 0f;
 
                 // Zablokuj kursor w obrębie ekranu i spraw, by był niewidoczny:
         Cursor.lockState = CursorLockMode.Confined;  // Ogranicza kursor do okna gry
+        Cursor.visible = false;
 
+        if (cursor != null)
+        {
+            cursor.position = simulatedPosition;
+        }
+        isGameActive = true;
     }
 
     void Update()
     {
-        Cursor.visible = true; // idk why it's switching it off
-        if (isGameActive)
+        if (!isGameActive) return;
+
+        Vector2 realMousePos = Mouse.current.position.ReadValue();
+
+        Vector2 mouseDelta = Mouse.current.delta.ReadValue();// cool delta thingie
+        simulatedPosition += mouseDelta;
+
+        Vector2 direction = (simulatedPosition - screenCenter).normalized;
+
+        // moving cursor
+        float xDrag = Random.Range(-dragStrength, dragStrength);
+        float yDrag = Random.Range(-dragStrength, dragStrength);
+
+        Vector2 offset = new Vector2(xDrag, yDrag);
+        Vector2 drag = (direction + offset).normalized * dragStrength * Time.deltaTime;
+
+        simulatedPosition += drag;
+
+        // clamping
+        simulatedPosition.x = Mathf.Clamp(simulatedPosition.x, 0, Screen.width);
+        simulatedPosition.y = Mathf.Clamp(simulatedPosition.y, 0, Screen.height);
+
+        cursor.position = simulatedPosition;
+
+        float dist = Vector2.Distance(cursor.position, screenCenter);
+
+        // if it's near center - continue, else restart timer
+        if (dist <= distance)
         {
-            timer -= Time.deltaTime;
-            if (timer <= 0)
+            winTimer += Time.deltaTime;
+            deathTimer = timeToDie;
+
+            if (winTimer >= timeToWin)
             {
                 EndGame(true);
             }
-            // getting cursor position
-            currentMousePosition = Mouse.current.position.ReadValue();
-            Vector2 direction = screenCenter - currentMousePosition; 
+        }
+        else
+        {
+            deathTimer -= Time.deltaTime;
+            winTimer = 0f;
 
-            // moving cursor
-            float xDrag = Random.Range(-dragStrength, dragStrength);
-            float yDrag = Random.Range(-dragStrength, dragStrength);
-
-            currentMousePosition += direction * Time.deltaTime * dragStrength + new Vector2(xDrag, yDrag);
-
-            currentMousePosition.x = Mathf.Clamp(currentMousePosition.x, 0, Screen.width);
-            currentMousePosition.y = Mathf.Clamp(currentMousePosition.y, 0, Screen.height);
-
-            // setting position
-            Cursor.lockState = CursorLockMode.Confined;
-            Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
-
-            Debug.Log(timer + " " + Vector2.Distance(currentMousePosition, screenCenter)); 
-
-            // if it's near center - continue, else restart timer
-            if (Vector2.Distance(currentMousePosition, screenCenter) > distance)
+            if (deathTimer <= 0)
             {
-                timer = maxTime; 
-            }
-            if (timer <= 0)
-            {
-                EndGame(true);
+                EndGame(false);
             }
         }
     }
@@ -73,8 +101,8 @@ public class ZenonMinigame : MonoBehaviour
 
         if (success)
         {
-            textMeshPro.text = "You have a lot of luck, you won"; 
-            Invoke("chengeScene", 3f); 
+            textMeshPro.text = "You have a lot of luck, you won";
+            StartCoroutine(LoadWithDelay(3f));
         }
         else
         {
@@ -82,7 +110,9 @@ public class ZenonMinigame : MonoBehaviour
         }
     }
 
-    void changeScene(){
-        SceneManager.LoadScene("MainLevel"); 
+    private IEnumerator LoadWithDelay(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        GameManager.Instance.LoadMainLevel();
     }
 }
