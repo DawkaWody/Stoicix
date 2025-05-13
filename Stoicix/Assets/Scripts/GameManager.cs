@@ -43,7 +43,12 @@ public class GameManager : MonoBehaviour
 
     private void LoadMainLevelData(Scene scene, LoadSceneMode mode)
     {
-        _player.position = _playerPosition;
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        if (playerObject != null)
+        {
+            _player = playerObject.transform;
+            _player.position = _playerPosition;
+        }
 
         SceneManager.sceneLoaded -= LoadMainLevelData;
     }

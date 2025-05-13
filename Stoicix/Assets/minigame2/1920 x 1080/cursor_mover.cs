@@ -25,23 +25,11 @@ public class cursorMover : MonoBehaviour
     void Start()
     {
         screenCenter = new Vector2(Screen.width / 2, Screen.height / 2);
-        simulatedPosition = screenCenter;
 
         center.position = screenCenter;
         center.sizeDelta = new Vector2(distance * 2f, distance * 2f);
 
-        deathTimer = timeToDie;
-        winTimer = 0f;
-
-                // Zablokuj kursor w obrębie ekranu i spraw, by był niewidoczny:
-        Cursor.lockState = CursorLockMode.Confined;  // Ogranicza kursor do okna gry
-        Cursor.visible = false;
-
-        if (cursor != null)
-        {
-            cursor.position = simulatedPosition;
-        }
-        isGameActive = true;
+        StartGame();
     }
 
     void Update()
@@ -95,6 +83,24 @@ public class cursorMover : MonoBehaviour
         }
     }
 
+    void StartGame()
+    {
+        simulatedPosition = screenCenter;
+
+        deathTimer = timeToDie;
+        winTimer = 0f;
+
+        // Zablokuj kursor w obrębie ekranu i spraw, by był niewidoczny:
+        Cursor.lockState = CursorLockMode.Confined;  // Ogranicza kursor do okna gry
+        Cursor.visible = false;
+
+        if (cursor != null)
+        {
+            cursor.position = simulatedPosition;
+        }
+        isGameActive = true;
+    }
+
     void EndGame(bool success)
     {
         isGameActive = false;
@@ -102,17 +108,19 @@ public class cursorMover : MonoBehaviour
         if (success)
         {
             textMeshPro.text = "You have a lot of luck, you won";
-            StartCoroutine(LoadWithDelay(3f));
+            StartCoroutine(AfterGameEnd(3f,success));
         }
         else
         {
             Debug.Log("You are so bad");
+            StartCoroutine(AfterGameEnd(3f, success));
         }
     }
 
-    private IEnumerator LoadWithDelay(float seconds)
+    private IEnumerator AfterGameEnd(float seconds, bool success)
     {
         yield return new WaitForSeconds(seconds);
-        GameManager.Instance.LoadMainLevel();
+        if (success) GameManager.Instance.LoadMainLevel();
+        else StartGame();
     }
 }
