@@ -17,6 +17,9 @@ public class Bar : MonoBehaviour
     private bool _gameStarted;
     private bool _skipNextGravityCheck;
 
+    private int _clickCountThisSecond;
+    private float _cpsTimer;
+
     private Rigidbody2D _rigidbody;
     private PlayerInputHandler _playerInputHandler;
 
@@ -48,12 +51,25 @@ public class Bar : MonoBehaviour
 
         if (!_gameActive) return;
 
+        //cps for fun
+        _cpsTimer += Time.deltaTime;
+
         if (_playerInputHandler.MouseWasPressed)
         {
+            _clickCountThisSecond++;
+
             _rigidbody.gravityScale = 1f;
             _skipNextGravityCheck = true; // skip the next gravity check
             Debug.Log(_rigidbody.gravityScale);
             _rigidbody.AddForce(Vector2.up * _clickForce, ForceMode2D.Impulse);
+        }
+
+        // Log CPS every second
+        if (_cpsTimer >= 1f)
+        {
+            Debug.Log($"CPS: {_clickCountThisSecond}");
+            _clickCountThisSecond = 0;
+            _cpsTimer = 0f;
         }
 
         StartCoroutine(GravityResetCheck());

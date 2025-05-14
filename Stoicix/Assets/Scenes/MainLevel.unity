@@ -20147,7 +20147,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 1bbb0c8ebe2a1304e89c83bae91863b0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21586,6 +21586,87 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &2108291869
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 731914949400080141, guid: f8080f1fe1f7eb14e86aecd3c01ef0e2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 731914949400080141, guid: f8080f1fe1f7eb14e86aecd3c01ef0e2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 731914949400080141, guid: f8080f1fe1f7eb14e86aecd3c01ef0e2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 731914949400080141, guid: f8080f1fe1f7eb14e86aecd3c01ef0e2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 731914949400080141, guid: f8080f1fe1f7eb14e86aecd3c01ef0e2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 731914949400080141, guid: f8080f1fe1f7eb14e86aecd3c01ef0e2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 731914949400080141, guid: f8080f1fe1f7eb14e86aecd3c01ef0e2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 731914949400080141, guid: f8080f1fe1f7eb14e86aecd3c01ef0e2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 731914949400080141, guid: f8080f1fe1f7eb14e86aecd3c01ef0e2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 731914949400080141, guid: f8080f1fe1f7eb14e86aecd3c01ef0e2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1268396464963594717, guid: f8080f1fe1f7eb14e86aecd3c01ef0e2, type: 3}
+      propertyPath: m_Size.x
+      value: 0.8209863
+      objectReference: {fileID: 0}
+    - target: {fileID: 1268396464963594717, guid: f8080f1fe1f7eb14e86aecd3c01ef0e2, type: 3}
+      propertyPath: m_Size.y
+      value: 1.6327207
+      objectReference: {fileID: 0}
+    - target: {fileID: 1268396464963594717, guid: f8080f1fe1f7eb14e86aecd3c01ef0e2, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.005544901
+      objectReference: {fileID: 0}
+    - target: {fileID: 1268396464963594717, guid: f8080f1fe1f7eb14e86aecd3c01ef0e2, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.18729937
+      objectReference: {fileID: 0}
+    - target: {fileID: 3907002272271538239, guid: f8080f1fe1f7eb14e86aecd3c01ef0e2, type: 3}
+      propertyPath: '_texts.Array.data[0]'
+      value: im batman
+      objectReference: {fileID: 0}
+    - target: {fileID: 4546860841454729027, guid: f8080f1fe1f7eb14e86aecd3c01ef0e2, type: 3}
+      propertyPath: _minigameScene
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233582266327849034, guid: f8080f1fe1f7eb14e86aecd3c01ef0e2, type: 3}
+      propertyPath: m_Name
+      value: Filozof02
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f8080f1fe1f7eb14e86aecd3c01ef0e2, type: 3}
 --- !u!1001 &920195779987925590
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21716,3 +21797,4 @@ SceneRoots:
   - {fileID: 565701229}
   - {fileID: 1808673429032646208}
   - {fileID: 920195779987925590}
+  - {fileID: 2108291869}
