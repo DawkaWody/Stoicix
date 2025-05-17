@@ -4,6 +4,7 @@ using TMPro;
 using UnityEditor;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using UnityEngine.Rendering.Universal;
 
 public class cursorMover : MonoBehaviour
 {
@@ -21,6 +22,15 @@ public class cursorMover : MonoBehaviour
     private bool isGameActive;
     private Vector2 screenCenter;
     private Vector2 simulatedPosition;
+
+    [Header("Light")]
+    [SerializeField] private Light2D cursorLight;
+    [SerializeField] private float maxLightIntensity;
+    [SerializeField] private float minLightIntensity;
+    [SerializeField] private float maxDistanceForLight;
+    [SerializeField] private float howIntense;
+
+
 
     void Start()
     {
@@ -44,13 +54,17 @@ public class cursorMover : MonoBehaviour
         Vector2 direction = (simulatedPosition - screenCenter).normalized;
 
         // moving cursor
-        float xDrag = Random.Range(-dragStrength, dragStrength);
-        float yDrag = Random.Range(-dragStrength, dragStrength);
+        Vector2 windForce = direction * dragStrength;
 
-        Vector2 offset = new Vector2(xDrag, yDrag);
-        Vector2 drag = (direction + offset).normalized * dragStrength * Time.deltaTime;
+        float randomnessStrength = dragStrength * 0.5f; //x % of dragStrength ; tweak this
+        Vector2 randomness = new Vector2(
+            Random.Range(-1f, 1f),
+            Random.Range(-1f, 1f)
+        ) * randomnessStrength;
 
-        simulatedPosition += drag;
+        Vector2 totalForce = (windForce + randomness) * Time.deltaTime;
+
+        simulatedPosition += totalForce;
 
         // clamping
         simulatedPosition.x = Mathf.Clamp(simulatedPosition.x, 0, Screen.width);
@@ -80,6 +94,15 @@ public class cursorMover : MonoBehaviour
             {
                 EndGame(false);
             }
+        }
+
+        //light
+        if (cursorLight != null)
+        {
+            float normalized = Mathf.Clamp01(dist / maxDistanceForLight);
+
+            float intensity = Mathf.Lerp(maxLightIntensity, minLightIntensity, normalized);
+            cursorLight.intensity = Mathf.Lerp(cursorLight.intensity, intensity, howIntense * Time.deltaTime);
         }
     }
 
