@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 0c6257ddf352aa9e1bb80e1054eea5b6
+guid: efe3a3ebe0427cdcabc1d99cc3e57481
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5850447679547297509
-    second: Stormy_Mountains_Background_Cloud_1_0
-  - first:
-      213: 4887326428856395908
-    second: Stormy_Mountains_Background_Cloud_1_1
-  - first:
-      213: 7545093690605856274
-    second: Stormy_Mountains_Background_Cloud_1_2
+      213: 6272712680379436563
+    second: Stormy_Mountains_1920x1080_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,43 +122,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Stormy_Mountains_Background_Cloud_1_0
+      name: Stormy_Mountains_1920x1080_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 704
-        width: 992
-        height: 212
+        x: 0
+        y: 0
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,52 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5eecc64ea27f03150800000000000000
-      internalID: 5850447679547297509
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stormy_Mountains_Background_Cloud_1_1
-      rect:
-        serializedVersion: 2
-        x: 122
-        y: 701
-        width: 92
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4882d5d2e7543d340800000000000000
-      internalID: 4887326428856395908
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stormy_Mountains_Background_Cloud_1_2
-      rect:
-        serializedVersion: 2
-        x: 476
-        y: 695
-        width: 137
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2166a996cbe85b860800000000000000
-      internalID: 7545093690605856274
+      spriteID: 31eca14d2f62d0750800000000000000
+      internalID: 6272712680379436563
       vertices: []
       indices: 
       edges: []
@@ -237,9 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Stormy_Mountains_Background_Cloud_1_0: 5850447679547297509
-      Stormy_Mountains_Background_Cloud_1_1: 4887326428856395908
-      Stormy_Mountains_Background_Cloud_1_2: 7545093690605856274
+      Stormy_Mountains_1920x1080_0: 6272712680379436563
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

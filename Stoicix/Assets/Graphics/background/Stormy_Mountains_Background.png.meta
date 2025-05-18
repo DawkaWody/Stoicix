@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 043145d6ec57dcc7787ae7d9c2124976
+guid: 40e55e772a3e6f38aa149a2adbd5d308
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7373851167059516336
-    second: Stormy_Mountains_Front_Big_Stone_0
+      213: -2504566400977126909
+    second: Stormy_Mountains_Background_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,43 +122,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Stormy_Mountains_Front_Big_Stone_0
+      name: Stormy_Mountains_Background_0
       rect:
         serializedVersion: 2
-        x: 1529
-        y: 53
-        width: 263
-        height: 110
+        x: 0
+        y: 0
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0bb9e2f619e255660800000000000000
-      internalID: 7373851167059516336
+      spriteID: 30a3169c02efd3dd0800000000000000
+      internalID: -2504566400977126909
       vertices: []
       indices: 
       edges: []
@@ -187,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Stormy_Mountains_Front_Big_Stone_0: 7373851167059516336
+      Stormy_Mountains_Background_0: -2504566400977126909
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

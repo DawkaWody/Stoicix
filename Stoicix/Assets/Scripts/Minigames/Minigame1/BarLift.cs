@@ -11,6 +11,13 @@ public class BarLift : MonoBehaviour, IMinigame
     [SerializeField] private float _forceMultiplierBecauseChatgptSucks = 1f;
     [SerializeField] private float _endDelay = 0.3f;
 
+    [Header("Border")]
+    [SerializeField] private GameObject BorderObject;
+    [SerializeField] private float fadeDuration = 0.3f;
+
+    private SpriteRenderer _spriteRenderer;
+    private bool _fadeInStarted;
+
     private float _startY;
     private float _clickForce;
     private float _gameTimer;
@@ -40,6 +47,21 @@ public class BarLift : MonoBehaviour, IMinigame
         _gameStarted = false;
         _skipNextGravityCheck = false;
         _gameWon = false;
+
+        if (BorderObject != null)
+        {
+            BorderObject.SetActive(true);
+            _spriteRenderer = BorderObject.GetComponent<SpriteRenderer>();
+
+            if (_spriteRenderer != null)
+            {
+                Color c = _spriteRenderer.color;
+                c.a = 0f;
+                _spriteRenderer.color = c;
+            }
+
+            BorderObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -82,6 +104,13 @@ public class BarLift : MonoBehaviour, IMinigame
             if (transform.position.y > _minY)
             {
                 _gameStarted = true;
+
+                if (!_fadeInStarted && BorderObject != null)
+                {
+                    BorderObject.SetActive(true);
+                    StartCoroutine(FadeSpriteAlpha(0f, 1f, fadeDuration));
+                    _fadeInStarted = true;
+                }
             }
             else return;
         }
@@ -120,8 +149,13 @@ public class BarLift : MonoBehaviour, IMinigame
 
     private IEnumerator GameEndWithDelay(bool gameWon)
     {
+        if (_spriteRenderer != null) yield return StartCoroutine(FadeSpriteAlpha(1f, 0f, fadeDuration));
+
+        if (BorderObject != null) BorderObject.SetActive(false);
+
         yield return new WaitForSeconds(_endDelay);
         _onGameEnd?.Invoke();
+
         if (!gameWon)
         {
             _gameTimer = _duraton;
@@ -130,6 +164,7 @@ public class BarLift : MonoBehaviour, IMinigame
             _gameStarted = false;
             _skipNextGravityCheck = false;
             _gameWon = false;
+            _fadeInStarted = false;
         }
         else
         {
@@ -141,5 +176,31 @@ public class BarLift : MonoBehaviour, IMinigame
     {
         _gameActive = true;
         _onGameEnd = onGameEnd;
+
+        //border
+        if (_spriteRenderer != null)
+        {
+            Color c = _spriteRenderer.color;
+            c.a = 0f;
+            _spriteRenderer.color = c;
+        }
+
+        if (BorderObject != null) BorderObject.SetActive(true);
+        _fadeInStarted = false;
+    }
+
+    private IEnumerator FadeSpriteAlpha(float from, float to, float duration)
+    {
+        float elapsed = 0f;
+        Color color = _spriteRenderer.color;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float alpha = Mathf.Lerp(from, to, elapsed / duration);
+            _spriteRenderer.color = new Color(color.r, color.g, color.b, alpha);
+            yield return null;
+        }
+        _spriteRenderer.color = new Color(color.r, color.g, color.b, to);
     }
 }

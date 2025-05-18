@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d5b69b9126fb158c9bffb2c55f404cd3
+guid: f063dfe27e19d36a3a869e9bd8d07ba8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8544301545768363960
-    second: Stormy_Mountains_Front_Path_0
+      213: 669632479479312636
+    second: Stormy_Mountains_Mountain_3_Light_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,43 +122,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Stormy_Mountains_Front_Path_0
+      name: Stormy_Mountains_Mountain_3_Light_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 1920
-        height: 211
+        height: 868
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8b728597cf4739670800000000000000
-      internalID: 8544301545768363960
+      spriteID: cf0bd6531330b4900800000000000000
+      internalID: 669632479479312636
       vertices: []
       indices: 
       edges: []
@@ -187,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Stormy_Mountains_Front_Path_0: 8544301545768363960
+      Stormy_Mountains_Mountain_3_Light_0: 669632479479312636
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

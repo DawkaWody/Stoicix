@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f872a131fcc859a93a846150a646f7c8
+guid: dc544c79c8fca7f55b3630487a4f546a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6576021544249344758
-    second: Stormy_Mountains_Mountain_2_Light_0
+      213: 738645206867433520
+    second: Stormy_Mountains_Mountain_2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,37 +122,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Stormy_Mountains_Mountain_2_Light_0
+      name: Stormy_Mountains_Mountain_2_0
       rect:
         serializedVersion: 2
         x: 1118
@@ -167,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a0db3bb2f374db4a0800000000000000
-      internalID: -6576021544249344758
+      spriteID: 038d062f6e1304a00800000000000000
+      internalID: 738645206867433520
       vertices: []
       indices: 
       edges: []
@@ -187,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Stormy_Mountains_Mountain_2_Light_0: -6576021544249344758
+      Stormy_Mountains_Mountain_2_0: 738645206867433520
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
