@@ -7,6 +7,8 @@ public class PlayerMovementController : MonoBehaviour
 {
     [SerializeField] private float _speed = 5f;
 
+    public bool disableHorizontal;
+
     private Vector2 _moveInput;
     private bool _takeInput;
 
@@ -27,10 +29,16 @@ public class PlayerMovementController : MonoBehaviour
     void Update()
     {
         _moveInput = _takeInput ? _inputHandler.MoveInput.normalized : Vector2.zero;
-        _rigidbody.linearVelocity = new Vector2(_moveInput.x, _moveInput.y) * _speed;
+        _moveInput.x = !disableHorizontal ? _moveInput.x : 0f;
+        _rigidbody.linearVelocity = new Vector2( _moveInput.x, _moveInput.y) * _speed;
 
         _animationController.AnimateMovement(_moveInput);
         TurnCheck();
+    }
+
+    public Vector2 GetInput()
+    {
+        return _moveInput;
     }
 
     public void Freeze()

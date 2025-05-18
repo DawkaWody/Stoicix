@@ -4,20 +4,16 @@ using TMPro;
 public class Monolog : MonoBehaviour
 {
     [SerializeField] private string[] _texts;
-    [SerializeField] private GameObject _textGo;
+    [SerializeField] private TMP_Text _textBox;
+    [SerializeField] private TypeWriterEffect _typeWriterEffect;
     [SerializeField] private GameObject _bubble;
 
     private int _currentTextIndex;
-
-    private TMP_Text _textBox;
-    private TypeWriterEffect _typeWriterEffect;
-
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     void Start()
     {
-        _textBox = _textGo.GetComponent<TMP_Text>();
-        _typeWriterEffect = _textGo.GetComponent<TypeWriterEffect>();
         _bubble.SetActive(false);
         _currentTextIndex = 0;
     }

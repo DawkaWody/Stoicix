@@ -30,8 +30,9 @@ public class PlayerInteractController : MonoBehaviour
             .ToList();
         IInteractable interactable = interactables.FirstOrDefault(i =>
             i.InteractPriority == interactables.Max(interactable => interactable.InteractPriority));
+        if (interactable == null) return;
         _movementController.Freeze();
-        interactable?.Interact(_movementController.Unfreeze);
+        interactable.Interact(_movementController.Unfreeze);
     }
 
     private void OnDrawGizmosSelected()

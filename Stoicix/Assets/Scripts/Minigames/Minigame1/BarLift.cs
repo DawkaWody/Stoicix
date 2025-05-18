@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class BarLift : MonoBehaviour
+public class BarLift : MonoBehaviour, IMinigame
 {
     [SerializeField] private float _targetCps;
     [SerializeField] private float _duraton;

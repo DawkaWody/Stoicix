@@ -5,19 +5,19 @@ using TMPro;
 public class TypeWriterEffect : MonoBehaviour
 {
     [SerializeField] private float _charsPerSecond;
+    [SerializeField] private TMP_Text _text;
 
     private int _charIndex;
     private bool _isRunning;
     private WaitForSeconds _delay;
     private Coroutine _typeWriterCo;
 
-    private TMP_Text _text;
     private TMP_TextInfo _textInfo;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        _text = GetComponent<TMP_Text>();
+        if (!_text) _text = GetComponent<TMP_Text>();
         _textInfo = _text.textInfo;
 
         _delay = new WaitForSeconds(1f / _charsPerSecond);
