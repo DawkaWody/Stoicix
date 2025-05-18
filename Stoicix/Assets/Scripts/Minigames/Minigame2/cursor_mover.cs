@@ -28,6 +28,12 @@ public class cursorMover : MonoBehaviour
     [SerializeField] private float maxLightIntensity;
     [SerializeField] private float minLightIntensity;
     [SerializeField] private float maxDistanceForLight;
+
+    [SerializeField] private Light2D globalLight;
+    [SerializeField] private float maxGlobalLightIntensity;
+    [SerializeField] private float minGlobalLightIntensity;
+    [SerializeField] private float maxDistanceForGlobalLight;
+
     [SerializeField] private float howIntense;
 
 
@@ -103,6 +109,13 @@ public class cursorMover : MonoBehaviour
 
             float intensity = Mathf.Lerp(maxLightIntensity, minLightIntensity, normalized);
             cursorLight.intensity = Mathf.Lerp(cursorLight.intensity, intensity, howIntense * Time.deltaTime);
+        }
+        if (globalLight != null)
+        {
+            float normalizedGlobal = Mathf.Clamp01(dist / maxDistanceForGlobalLight);
+
+            float intensity = Mathf.Lerp(maxGlobalLightIntensity, minGlobalLightIntensity, normalizedGlobal);
+            globalLight.intensity = Mathf.Lerp(globalLight.intensity, intensity, howIntense * Time.deltaTime);
         }
     }
 
