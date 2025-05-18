@@ -14,7 +14,7 @@ public class cursorMover : MonoBehaviour
     [SerializeField] private float distance = 100f;
 
     [SerializeField] private TextMeshProUGUI textMeshPro;
-    [SerializeField] private RectTransform cursor;
+    [SerializeField] private Transform cursor;
     [SerializeField] private RectTransform center;
 
     private float deathTimer;
@@ -36,14 +36,18 @@ public class cursorMover : MonoBehaviour
 
     [SerializeField] private float howIntense;
 
-
+    private float zOffset;
 
     void Start()
     {
-        screenCenter = new Vector2(Screen.width / 2, Screen.height / 2);
+        screenCenter = new Vector2(Screen.width / 2f, Screen.height / 2f);
+        zOffset = Mathf.Abs(Camera.main.transform.position.z - cursor.transform.position.z);
 
-        center.position = screenCenter;
-        center.sizeDelta = new Vector2(distance * 2f, distance * 2f);
+        //center.sizeDelta = new Vector2(distance * 2f, distance * 2f);
+
+        Vector3 centerWorld = Camera.main.ScreenToWorldPoint(new Vector3(screenCenter.x, screenCenter.y, zOffset));
+        centerWorld.z = 0f;
+        center.position = centerWorld;
 
         StartGame();
     }
@@ -52,7 +56,7 @@ public class cursorMover : MonoBehaviour
     {
         if (!isGameActive) return;
 
-        Vector2 realMousePos = Mouse.current.position.ReadValue();
+        //Vector2 realMousePos = Mouse.current.position.ReadValue();
 
         Vector2 mouseDelta = Mouse.current.delta.ReadValue();// cool delta thingie
         simulatedPosition += mouseDelta;
@@ -63,10 +67,7 @@ public class cursorMover : MonoBehaviour
         Vector2 windForce = direction * dragStrength;
 
         float randomnessStrength = dragStrength * 0.5f; //x % of dragStrength ; tweak this
-        Vector2 randomness = new Vector2(
-            Random.Range(-1f, 1f),
-            Random.Range(-1f, 1f)
-        ) * randomnessStrength;
+        Vector2 randomness = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)) * randomnessStrength;
 
         Vector2 totalForce = (windForce + randomness) * Time.deltaTime;
 
@@ -76,9 +77,11 @@ public class cursorMover : MonoBehaviour
         simulatedPosition.x = Mathf.Clamp(simulatedPosition.x, 0, Screen.width);
         simulatedPosition.y = Mathf.Clamp(simulatedPosition.y, 0, Screen.height);
 
-        cursor.position = simulatedPosition;
+        Vector3 worldPos = Camera.main.ScreenToWorldPoint(simulatedPosition);
+        worldPos.z = 0f;
+        cursor.position = worldPos;
 
-        float dist = Vector2.Distance(cursor.position, screenCenter);
+        float dist = Vector2.Distance(simulatedPosition, screenCenter);
 
         // if it's near center - continue, else restart timer
         if (dist <= distance)
@@ -132,7 +135,9 @@ public class cursorMover : MonoBehaviour
 
         if (cursor != null)
         {
-            cursor.position = simulatedPosition;
+            Vector3 worldPos = Camera.main.ScreenToWorldPoint(simulatedPosition);
+            worldPos.z = 0f;
+            cursor.position = worldPos;
         }
         isGameActive = true;
     }
