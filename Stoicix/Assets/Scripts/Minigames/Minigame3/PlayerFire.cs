@@ -50,6 +50,7 @@ public class PlayerFire : MonoBehaviour, IMinigame
         if (!gameWon)
         {
             transform.position = _startPos;
+            _movementController.transform.position = _startPos;
             _paws.Restart();
         }
         else

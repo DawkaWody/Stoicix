@@ -1,31 +1,27 @@
-using System;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
-[RequireComponent(typeof(Animator))]
 public class Paws : MonoBehaviour
 {
     [SerializeField] private float _minWaitTime;
     [SerializeField] private float _maxWaitTime;
+    [SerializeField] private PawMovement[] _paws;
+    [SerializeField] private float _movementTime;
 
     private float _timer;
-    private float _animationTimer;
+    private float _movingTimer;
     private bool _resetTimer;
-    private bool _attacking;
     private bool _gameLost;
     
-    private Animator _animator;
     private PlayerMovementController _playerMovementController;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        _animator = GetComponent<Animator>();
         _playerMovementController = GetComponentInParent<PlayerMovementController>();
         _timer = 0f;
         _resetTimer = true;
-        _attacking = false;
         _gameLost = false;
+        foreach (PawMovement pawMovement in _paws) pawMovement.moveTime = _movementTime;
     }
 
     // Update is called once per frame
@@ -40,22 +36,23 @@ public class Paws : MonoBehaviour
         }
 
         if (movement.sqrMagnitude > 0) _timer -= Time.deltaTime;
-        Debug.Log(_timer);
 
         if (!(_timer <= 0f)) return;
-        _animationTimer += Time.deltaTime;
-        if (_animationTimer > 1f && movement.sqrMagnitude == 0)
+        _movingTimer += Time.deltaTime;
+        if (_movingTimer > 1f && movement.sqrMagnitude == 0)
         {
             Debug.Log("reset");
-            _animator.SetTrigger("reset");
-            _animator.ResetTrigger("start");
+            foreach (PawMovement pawMovement in _paws) pawMovement.MoveAway();
             _resetTimer = true;
-            _animationTimer = 0f;
+            _movingTimer = 0f;
         }
-        else _animator.SetTrigger("start");
-        if (_animator.GetCurrentAnimatorStateInfo(0).IsName("End"))
+        else
         {
-            _gameLost = true;
+            foreach (PawMovement pawMovement in _paws)
+            {
+                pawMovement.MoveTowards();
+                _gameLost = _gameLost || pawMovement.Hit();
+            }
         }
     }
 
@@ -63,11 +60,8 @@ public class Paws : MonoBehaviour
     {
         _timer = 0f;
         _resetTimer = true;
-        _attacking = false;
         _gameLost = false;
-        _animator.ResetTrigger("start");
-        _animator.ResetTrigger("reset");
-        _animator.Play("None");
+        foreach (PawMovement pawMovement in _paws) pawMovement.Restart();
     }
 
     public bool IsLost()
