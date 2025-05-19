@@ -6,6 +6,7 @@ public class PawMovement : MonoBehaviour
 
     private Transform _player;
     private Vector2 _startPos;
+    private Vector2 _pawOffset;
     private bool _moveTowards;
     private bool _moveAway;
     private float _movementTimer;
@@ -15,26 +16,28 @@ public class PawMovement : MonoBehaviour
     void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player").transform;
-        _startPos = transform.localPosition;
         _moveTowards = false;
         _moveAway = false;
         _movementTimer = 0f;
         _hit = false;
+
+        _pawOffset = (Vector2)(transform.position - _player.position);
     }
 
     // Update is called once per frame
     void Update()
     {
+        _startPos = (Vector2)_player.position + _pawOffset;
         if (_moveTowards)
         {
             _movementTimer += Time.deltaTime;
-            transform.localPosition = Vector2.Lerp(transform.localPosition, _player.localPosition, _movementTimer / moveTime);
+            transform.position = Vector2.Lerp(transform.position, _player.position, _movementTimer / moveTime);
             if (_movementTimer >= moveTime) _hit = true;
         }
         else if (_moveAway)
         {
             _movementTimer += Time.deltaTime;
-            transform.localPosition = Vector2.Lerp(transform.localPosition, _startPos, _movementTimer / moveTime);
+            transform.position = Vector2.Lerp(transform.position, _startPos, _movementTimer / moveTime);
         }
     }
 
@@ -63,6 +66,7 @@ public class PawMovement : MonoBehaviour
         _moveAway = false;
         _movementTimer = 0f;
         _hit = false;
+        _startPos = (Vector2)_player.position + _pawOffset;
         transform.position = _startPos;
     }
 }
