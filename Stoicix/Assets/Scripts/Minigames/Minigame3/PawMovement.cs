@@ -6,6 +6,7 @@ public class PawMovement : MonoBehaviour
 
     private Transform _player;
     private Vector2 _startPos;
+    private Vector2 _endPos;
     private Vector2 _pawOffset;
     private bool _moveTowards;
     private bool _moveAway;
@@ -31,13 +32,13 @@ public class PawMovement : MonoBehaviour
         if (_moveTowards)
         {
             _movementTimer += Time.deltaTime;
-            transform.position = Vector2.Lerp(transform.position, _player.position, _movementTimer / moveTime);
+            transform.position = Vector2.Lerp(_startPos, _player.position, _movementTimer / moveTime);
             if (_movementTimer >= moveTime) _hit = true;
         }
         else if (_moveAway)
         {
             _movementTimer += Time.deltaTime;
-            transform.position = Vector2.Lerp(transform.position, _startPos, _movementTimer / moveTime);
+            transform.position = Vector2.Lerp(_endPos, _startPos, _movementTimer / moveTime);
         }
     }
 
@@ -58,6 +59,7 @@ public class PawMovement : MonoBehaviour
         if (!_moveAway) _movementTimer = 0f;
         _moveAway = true;
         _moveTowards = false;
+        _endPos = transform.position;
     }
 
     public void Restart()
