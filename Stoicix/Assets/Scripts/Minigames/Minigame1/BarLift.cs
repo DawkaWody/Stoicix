@@ -168,7 +168,7 @@ public class BarLift : MonoBehaviour, IMinigame
         }
         else
         {
-            GameManager.Instance.LoadMainLevel();
+            GameManager.Instance.MarkQuestCompletedInScene();
         }
     }
 

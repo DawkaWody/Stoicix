@@ -161,7 +161,7 @@ public class cursorMover : MonoBehaviour
     private IEnumerator AfterGameEnd(float seconds, bool success)
     {
         yield return new WaitForSeconds(seconds);
-        if (success) GameManager.Instance.LoadMainLevel();
+        if (success) GameManager.Instance.CompleteQuest();
         else StartGame();
     }
 }
