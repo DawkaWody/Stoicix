@@ -5964,6 +5964,7 @@ MonoBehaviour:
   timeToWin: 5
   timeToDie: 5
   distance: 400
+  _winSound: {fileID: 8300000, guid: 00bbd0707b0cd274f8f3e62e20a20b25, type: 3}
   textMeshPro: {fileID: 272170708}
   cursor: {fileID: 799839461}
   center: {fileID: 741973433}

@@ -160,6 +160,7 @@ public class cursorMover : MonoBehaviour
 
     private IEnumerator AfterGameEnd(float seconds, bool success)
     {
+        if (success) UiManager.Instance.ShowWinScreen();
         yield return new WaitForSeconds(seconds);
         if (success) GameManager.Instance.CompleteQuest();
         else StartGame();

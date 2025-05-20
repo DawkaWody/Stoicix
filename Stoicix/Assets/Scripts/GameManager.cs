@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
     {
         CurrentQuestGiverID = philosopherID;
         JustCompletedQuest = false;
+        if (philosopherID == 1) GameObject.FindAnyObjectByType<Bar>().SetInteractable();
     }
 
     public void CompleteQuest()// for scene changing minigames
@@ -69,7 +70,13 @@ public class GameManager : MonoBehaviour
     public void RewardGem()
     {
         gemCount++;
-        Debug.Log("Gems: " + gemCount);
+        UiManager.Instance.UpdateGemCount(gemCount);
+        if (gemCount == 3) GameWon();
+    }
+
+    private void GameWon()
+    {
+        SceneManager.LoadScene(4);
     }
 
     public void LoadMinigame(int index)

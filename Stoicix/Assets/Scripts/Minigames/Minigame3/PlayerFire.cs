@@ -45,6 +45,7 @@ public class PlayerFire : MonoBehaviour, IMinigame
 
     private IEnumerator GameEndWithDelay(bool gameWon)
     {
+        UiManager.Instance.ShowWinScreen();
         yield return new WaitForSeconds(_endDelay);
         _onGameEnd?.Invoke();
         if (!gameWon)
