@@ -3912,7 +3912,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 7cfaef13e02a14f47870fa9646186496, type: 3}
     - target: {fileID: 2437376196139506014, guid: 2863d810ef5ea504f9603799a0c8af75, type: 3}
       propertyPath: '_texts.Array.data[0]'
-      value: "Gratulacje u\u017Cytkowniku"
+      value: "Gratulacje u\u017Cytkowniku!"
       objectReference: {fileID: 0}
     - target: {fileID: 2437376196139506014, guid: 2863d810ef5ea504f9603799a0c8af75, type: 3}
       propertyPath: _voiceLines.Array.size

@@ -23625,7 +23625,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9119863317036643149, guid: f8080f1fe1f7eb14e86aecd3c01ef0e2, type: 3}
       propertyPath: '_texts.Array.data[0]'
-      value: "Gratulacje u\u017Cytkowniku"
+      value: "Gratulacje u\u017Cytkowniku!"
       objectReference: {fileID: 0}
     - target: {fileID: 9119863317036643149, guid: f8080f1fe1f7eb14e86aecd3c01ef0e2, type: 3}
       propertyPath: _voiceLines.Array.size
@@ -23693,7 +23693,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2606617831603675159, guid: 50620ab132d7a3a4f9ffe6de316903c0, type: 3}
       propertyPath: '_texts.Array.data[0]'
-      value: Gratulacje uzytkowniku
+      value: Gratulacje uzytkowniku!
       objectReference: {fileID: 0}
     - target: {fileID: 2606617831603675159, guid: 50620ab132d7a3a4f9ffe6de316903c0, type: 3}
       propertyPath: _voiceLines.Array.size
