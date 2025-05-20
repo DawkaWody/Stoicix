@@ -148,12 +148,11 @@ public class cursorMover : MonoBehaviour
 
         if (success)
         {
-            textMeshPro.text = "You have a lot of luck, you won";
             StartCoroutine(AfterGameEnd(3f,success));
         }
         else
         {
-            Debug.Log("You are so bad");
+            textMeshPro.text = "Nie przetrwałeś burzy. Spróbuj ponownie.";
             StartCoroutine(AfterGameEnd(3f, success));
         }
     }
