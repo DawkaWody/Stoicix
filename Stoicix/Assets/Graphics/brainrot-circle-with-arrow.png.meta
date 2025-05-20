@@ -211,7 +211,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      brainrot-circle-with-arrow_0: 6854912139220757654
+      brainrot-circle-with-arrow_1: 8334618200507488418
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

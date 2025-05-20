@@ -60,7 +60,7 @@ public class PlayerFire : MonoBehaviour, IMinigame
         else
         {
             _movementController.disableHorizontal = false;
-            GameManager.Instance.LoadMainLevel();
+            GameManager.Instance.CompleteQuest();
         }
         _gameEnding = false;
     }
