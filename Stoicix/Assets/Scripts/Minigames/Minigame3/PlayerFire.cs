@@ -8,6 +8,7 @@ public class PlayerFire : MonoBehaviour, IMinigame
     [SerializeField] private float _endDelay = 0.3f;
 
     private Vector2 _startPos;
+    private bool _gameEnding;
     private IInteractable.EmptyCallback _onGameEnd;
 
     private PlayerMovementController _movementController;
@@ -17,6 +18,7 @@ public class PlayerFire : MonoBehaviour, IMinigame
     {
         _movementController = GetComponentInParent<PlayerMovementController>();
         _movementController.disableHorizontal = true;
+        _gameEnding = false;
         _startPos = transform.localPosition;
     }
 
@@ -24,8 +26,8 @@ public class PlayerFire : MonoBehaviour, IMinigame
     void Update()
     {
         UpdatePosition(_movementController.GetInput().y);
-        if (_paws.IsLost()) StartCoroutine(GameEndWithDelay(false));
-        if (transform.position.y <= _endPos.position.y) StartCoroutine(GameEndWithDelay(true));
+        if (_paws.IsLost() && !_gameEnding) StartCoroutine(GameEndWithDelay(false));
+        if (transform.position.y <= _endPos.position.y && !_gameEnding) StartCoroutine(GameEndWithDelay(true));
     }
 
     public void UpdatePosition(float yInput)
@@ -45,6 +47,7 @@ public class PlayerFire : MonoBehaviour, IMinigame
 
     private IEnumerator GameEndWithDelay(bool gameWon)
     {
+        _gameEnding = true;
         UiManager.Instance.ShowWinScreen();
         yield return new WaitForSeconds(_endDelay);
         _onGameEnd?.Invoke();
@@ -59,5 +62,6 @@ public class PlayerFire : MonoBehaviour, IMinigame
             _movementController.disableHorizontal = false;
             GameManager.Instance.LoadMainLevel();
         }
+        _gameEnding = false;
     }
 }

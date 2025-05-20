@@ -39,7 +39,6 @@ public class Paws : MonoBehaviour
 
         if (!(_timer <= 0f)) return;
         _movingTimer += Time.deltaTime;
-        Debug.Log("Moving (paws.cs): " + _movingTimer);
         if (_movingTimer > 1f && movement.sqrMagnitude == 0)
         {
             Debug.Log("reset");
