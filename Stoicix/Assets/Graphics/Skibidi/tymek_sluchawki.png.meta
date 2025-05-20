@@ -186,7 +186,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tymek_sluchawki_0: -7601336542497080363
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

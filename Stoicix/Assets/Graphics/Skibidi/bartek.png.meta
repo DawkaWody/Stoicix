@@ -186,7 +186,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bartek_0: -1595269693280621838
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
