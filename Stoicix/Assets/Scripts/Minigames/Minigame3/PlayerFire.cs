@@ -25,7 +25,7 @@ public class PlayerFire : MonoBehaviour, IMinigame
     {
         UpdatePosition(_movementController.GetInput().y);
         if (_paws.IsLost()) StartCoroutine(GameEndWithDelay(false));
-        if (transform.position.y >= _endPos.position.y) StartCoroutine(GameEndWithDelay(true));
+        if (transform.position.y <= _endPos.position.y) StartCoroutine(GameEndWithDelay(true));
     }
 
     public void UpdatePosition(float yInput)
