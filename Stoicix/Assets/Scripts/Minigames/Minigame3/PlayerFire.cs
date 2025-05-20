@@ -19,7 +19,7 @@ public class PlayerFire : MonoBehaviour, IMinigame
         _movementController = GetComponentInParent<PlayerMovementController>();
         _movementController.disableHorizontal = true;
         _gameEnding = false;
-        _startPos = transform.localPosition;
+        _startPos = transform.position;
     }
 
     // Update is called once per frame
