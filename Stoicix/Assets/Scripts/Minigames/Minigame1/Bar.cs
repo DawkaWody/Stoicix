@@ -19,6 +19,7 @@ public class Bar : MonoBehaviour, IInteractable
     public void Interact(IInteractable.EmptyCallback onInteractionEnd = null)
     {
         if (_interactable) _barLift.StartGame(onInteractionEnd);
+        else onInteractionEnd?.Invoke();
     }
 
     public void SetInteractable()

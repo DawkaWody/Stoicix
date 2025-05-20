@@ -1069,7 +1069,7 @@ GameObject:
   - component: {fileID: 971065570}
   - component: {fileID: 971065571}
   m_Layer: 6
-  m_Name: fadsfdsa
+  m_Name: Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1200,7 +1200,7 @@ MonoBehaviour:
   _duraton: 7
   _minY: -2
   _maxY: -0.5
-  _forceMultiplierBecauseChatgptSucks: 2.9
+  _forceMultiplierBecauseChatgptSucks: 5
   _endDelay: 0.3
   BorderObject: {fileID: 910239894}
   fadeDuration: 0.15
@@ -3740,6 +3740,10 @@ PrefabInstance:
       propertyPath: '_voiceLines.Array.data[0]'
       value: 
       objectReference: {fileID: 8300000, guid: 7cfaef13e02a14f47870fa9646186496, type: 3}
+    - target: {fileID: 2437376196139506014, guid: 2863d810ef5ea504f9603799a0c8af75, type: 3}
+      propertyPath: '_texts.Array.data[0]'
+      value: "Gratulacje u\u017Cytkowniku"
+      objectReference: {fileID: 0}
     - target: {fileID: 2437376196139506014, guid: 2863d810ef5ea504f9603799a0c8af75, type: 3}
       propertyPath: _voiceLines.Array.size
       value: 1
