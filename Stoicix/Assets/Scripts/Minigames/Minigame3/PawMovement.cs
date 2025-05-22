@@ -13,6 +13,7 @@ public class PawMovement : MonoBehaviour
     private float _movementTimer;
     private bool _hit;
 
+    [SerializeField] private float stopDistance = 1f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -32,7 +33,7 @@ public class PawMovement : MonoBehaviour
         if (_moveTowards)
         {
             _movementTimer += Time.deltaTime;
-            transform.position = Vector2.Lerp(_startPos, _player.position, _movementTimer / moveTime);
+            transform.position = Vector2.Lerp(_startPos, _endPos, _movementTimer / moveTime);
             if (_movementTimer >= moveTime) _hit = true;
         }
         else if (_moveAway)
@@ -52,6 +53,10 @@ public class PawMovement : MonoBehaviour
         if (!_moveTowards) _movementTimer = 0f;
         _moveTowards = true;
         _moveAway = false;
+
+        Vector2 directionToPlayer = ((Vector2)_player.position - _startPos).normalized;
+
+        _endPos = (Vector2)_player.position - directionToPlayer * stopDistance;
     }
 
     public void MoveAway()

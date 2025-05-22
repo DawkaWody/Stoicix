@@ -48,14 +48,22 @@ public class PlayerFire : MonoBehaviour, IMinigame
     private IEnumerator GameEndWithDelay(bool gameWon)
     {
         _gameEnding = true;
-        if (gameWon) UiManager.Instance.ShowWinScreen();
-        yield return new WaitForSeconds(_endDelay);
-        _onGameEnd?.Invoke();
+        if(gameWon)
+        {
+            UiManager.Instance.ShowWinScreen();
+            yield return new WaitForSeconds(_endDelay);
+            _onGameEnd?.Invoke();
+        }        
         if (!gameWon)
         {
+            yield return new WaitForSeconds(_endDelay/6f);
+
             transform.position = _startPos;
             _movementController.transform.position = _startPos;
             _paws.Restart();
+            _gameEnding = false;
+            _onGameEnd?.Invoke();
+            yield break;
         }
         else
         {

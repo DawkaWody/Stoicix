@@ -22,6 +22,7 @@ public class cursorMover : MonoBehaviour
     private bool isGameActive;
     private Vector2 screenCenter;
     private Vector2 simulatedPosition;
+    private Vector2 lastMousePosition;
 
     [Header("Light")]
     [SerializeField] private Light2D cursorLight;
@@ -38,12 +39,13 @@ public class cursorMover : MonoBehaviour
 
     private float zOffset;
 
+    [Header("Simulation Flags")]
+    [SerializeField] private bool simulateWebGL = false;
+
     void Start()
     {
         screenCenter = new Vector2(Screen.width / 2f, Screen.height / 2f);
         zOffset = Mathf.Abs(Camera.main.transform.position.z - cursor.transform.position.z);
-
-        //center.sizeDelta = new Vector2(distance * 2f, distance * 2f);
 
         Vector3 centerWorld = Camera.main.ScreenToWorldPoint(new Vector3(screenCenter.x, screenCenter.y, zOffset));
         centerWorld.z = 0f;
@@ -56,9 +58,21 @@ public class cursorMover : MonoBehaviour
     {
         if (!isGameActive) return;
 
-        //Vector2 realMousePos = Mouse.current.position.ReadValue();
+        Vector2 mouseDelta = Vector2.zero;
+        if (simulateWebGL || Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            // WebGL: Use Input.mousePosition and calculate the delta
+            Vector2 mousePosition = Mouse.current.position.ReadValue();
+            mouseDelta = mousePosition - lastMousePosition;
+            lastMousePosition = mousePosition;
+        }
+        else if (!simulateWebGL || Application.platform == RuntimePlatform.WindowsPlayer)
+        {
+            // Windows (and other desktop platforms): Use the new Input System
+            mouseDelta = Mouse.current.delta.ReadValue();
+            lastMousePosition = Mouse.current.position.ReadValue();
+        }
 
-        Vector2 mouseDelta = Mouse.current.delta.ReadValue();// cool delta thingie
         simulatedPosition += mouseDelta;
 
         Vector2 direction = (simulatedPosition - screenCenter).normalized;
@@ -129,9 +143,17 @@ public class cursorMover : MonoBehaviour
         deathTimer = timeToDie;
         winTimer = 0f;
 
-        // Zablokuj kursor w obrębie ekranu i spraw, by był niewidoczny:
-        Cursor.lockState = CursorLockMode.Confined;  // Ogranicza kursor do okna gry
-        Cursor.visible = false;
+        if (simulateWebGL || Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            // WebGL: Don't lock the cursor, just hide it
+            Cursor.visible = false;
+        }
+        else if (!simulateWebGL || Application.platform == RuntimePlatform.WindowsPlayer)
+        {
+            // Windows and other desktop platforms: Lock and hide the cursor
+            Cursor.lockState = CursorLockMode.Confined;  // Lock the cursor within the game window
+            Cursor.visible = false;
+        }
 
         if (cursor != null)
         {
@@ -139,6 +161,7 @@ public class cursorMover : MonoBehaviour
             worldPos.z = 0f;
             cursor.position = worldPos;
         }
+        textMeshPro.text = "Utrzymaj kursor na środku ekranu";
         isGameActive = true;
     }
 

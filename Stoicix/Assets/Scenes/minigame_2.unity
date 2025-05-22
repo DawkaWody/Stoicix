@@ -5960,10 +5960,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25052fa67473b51cfae2d309dd1d8bd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dragStrength: 1000
+  dragStrength: 650
   timeToWin: 5
   timeToDie: 5
-  distance: 400
+  distance: 500
   textMeshPro: {fileID: 272170708}
   cursor: {fileID: 799839461}
   center: {fileID: 741973433}
@@ -5973,9 +5973,10 @@ MonoBehaviour:
   maxDistanceForLight: 300
   globalLight: {fileID: 800435700}
   maxGlobalLightIntensity: 0.1
-  minGlobalLightIntensity: 0.02
+  minGlobalLightIntensity: 0.05
   maxDistanceForGlobalLight: 300
   howIntense: 5
+  simulateWebGL: 0
 --- !u!4 &1655479304
 Transform:
   m_ObjectHideFlags: 0
