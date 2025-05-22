@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Cursor.visible = false;
         _player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
@@ -76,6 +77,7 @@ public class GameManager : MonoBehaviour
 
     private void GameWon()
     {
+        Cursor.visible = true;
         SceneManager.LoadScene(4);
     }
 
